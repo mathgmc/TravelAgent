@@ -18,3 +18,4 @@ class AgentState(TypedDict):
     question: str
     travel_interests: List[str]
     selected_destinations: List[str]
+    answer: str

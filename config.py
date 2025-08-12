@@ -1,13 +1,13 @@
 import os
 from dotenv import load_dotenv
-from langchain_openai import ChatOpenAI
-
+from langchain.chat_models import init_chat_model
 # Load environment variables
 load_dotenv()
 
 # Configure LLM
-LLM = ChatOpenAI(
-    model="gpt-3.5-turbo",
-    temperature=0.5,
-    api_key=os.getenv("OPENAI_API_KEY")
-)
+def get_llm_global():
+    return init_chat_model(
+        "gpt-4o",
+        model_provider="openai",
+        temperature=0,
+    )
