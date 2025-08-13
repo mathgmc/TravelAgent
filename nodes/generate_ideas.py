@@ -1,4 +1,4 @@
-from models.agent_state import AgentState
+from schemas.agent_state import AgentState
 from tools.generate_travel_ideas import llm_generate_travel_ideas
 
 
@@ -15,9 +15,9 @@ def generate_travel_ideas(agent_state: AgentState):
     
     # Extract travel interests from the agent state
     travel_interests = agent_state.get("travel_interests", [])
+    question = agent_state["question"]
 
-
-    answer = llm_generate_travel_ideas(travel_interests)
+    answer = llm_generate_travel_ideas(travel_interests, question)
     
     return {
         "answer": answer,

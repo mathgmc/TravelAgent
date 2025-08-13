@@ -1,4 +1,4 @@
-from models.agent_state import AgentState
+from schemas.agent_state import AgentState
 from tools.extract_travel_interests import extract_user_travel_interests
 
 
