@@ -52,7 +52,13 @@ AGENT = create_workflow().compile()
 
 
 def agent_run():
-    question = input("Hello! I'm your travel agent. Please, to start, tell me: \n- Where you are? \n- How much you want to spent in USD? \n- How many days you wish to travel?\n")
+    question = input(
+        "Hello! I'm your travel agent. Please, to start, tell me: "
+        "\n- Where you are?"
+        "\n- How much you want to spent in USD?"
+        "\n- How many days you wish to travel?"
+        "\n- What kinds of travel experiences you enjoy?\n"
+    )
     agent_state = AgentState()
     while question.lower() != "exit":
         agent_state["question"] = question

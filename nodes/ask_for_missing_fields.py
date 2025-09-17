@@ -29,6 +29,7 @@ def _field_to_prompt(field_name: str) -> str:
         "address": "the city or address you will be travelling from",
         "trip_maximum_cost_usd": "your maximum budget in USD",
         "amount_of_days": "how many days you plan to travel",
+        "travel_interests": "the types of travel experiences you enjoy",
     }
 
     return prompts.get(field_name, field_name.replace("_", " "))

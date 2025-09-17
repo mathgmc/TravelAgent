@@ -4,7 +4,12 @@ from models.agent_state import AgentState
 from tools.extract_required_trip_details import extract_required_trip_details
 
 
-REQUIRED_FIELDS = ("address", "trip_maximum_cost_usd", "amount_of_days")
+REQUIRED_FIELDS = (
+    "address",
+    "trip_maximum_cost_usd",
+    "amount_of_days",
+    "travel_interests",
+)
 
 
 def check_required_fields(agent_state: AgentState):
@@ -36,6 +41,8 @@ def _value_is_missing(value: Any) -> bool:
         return True
     if isinstance(value, str):
         return not value.strip()
+    if isinstance(value, (list, tuple, set, dict)):
+        return len(value) == 0
     return False
 
 
