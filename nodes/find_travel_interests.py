@@ -16,5 +16,5 @@ def find_travel_interests(agent_state: AgentState):
     travel_interests = extract_user_travel_interests(agent_state)
 
     return {
-        "travel_interests": travel_interests,
+        "travel_interests": agent_state.get("travel_interests", []) + travel_interests,
     }

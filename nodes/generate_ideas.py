@@ -12,12 +12,7 @@ def generate_travel_ideas(agent_state: AgentState):
     Returns:
         AgentState: Updated agent state with generated travel ideas.
     """
-    
-    # Extract travel interests from the agent state
-    travel_interests = agent_state.get("travel_interests", [])
-
-
-    answer = llm_generate_travel_ideas(travel_interests)
+    answer = llm_generate_travel_ideas(agent_state)
     
     return {
         "answer": answer,
