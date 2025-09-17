@@ -27,7 +27,7 @@ def add_edges(workflow):
     workflow.add_edge(START, "find_travel_interests")
     workflow.add_edge("find_travel_interests", "check_required_fields")
     workflow.add_conditional_edges(
-        "find_travel_interests",
+        "check_required_fields",
         route_after_checks,
         {
             "missing": "ask_for_missing_fields",
