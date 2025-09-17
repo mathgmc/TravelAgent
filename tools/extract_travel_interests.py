@@ -1,7 +1,7 @@
-from settings.config import get_llm_global
+from config import get_llm_global
 from langchain_core.prompts import ChatPromptTemplate
 
-from schemas.llm_parsers import FindUserInterestsParser
+from models.llm_parsers import FindUserInterestsParser
 
 
 def generate_travel_interests_prompt() -> str:
