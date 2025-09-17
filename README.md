@@ -11,8 +11,8 @@ TravelAgent is a lightweight LangGraph agent built to experiment with LangChain 
 - Ships with a Mermaid-based graph render so you can inspect how information moves through the workflow.
 
 ## How It Works
-1. `check_required_fields` extracts core trip requirements (origin, budget, trip length, interests).
-2. `find_travel_interests` expands the list of interests mentioned across the chat.
+1. `find_travel_interests` expands the list of interests mentioned in the question.
+2. `check_required_fields` extracts core trip requirements (origin, budget, trip length, interests).
 3. `ask_for_missing_fields` prompts the traveler for any remaining gaps.
 4. `generate_travel_ideas` calls the LLM for recommendations once the state is complete.
 
