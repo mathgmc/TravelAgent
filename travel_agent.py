@@ -24,8 +24,8 @@ def route_after_checks(agent_state: AgentState):
 
 def add_edges(workflow):
     """Add edges to the workflow graph."""
-    workflow.add_edge(START, "check_required_fields")
-    workflow.add_edge("check_required_fields", "find_travel_interests")
+    workflow.add_edge(START, "find_travel_interests")
+    workflow.add_edge("find_travel_interests", "check_required_fields")
     workflow.add_conditional_edges(
         "find_travel_interests",
         route_after_checks,
